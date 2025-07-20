@@ -1,0 +1,13 @@
+{
+    "name": "md-to-notion-service",
+    "version": "1.0.0",
+    "description": "A microservice to convert Markdown to Notion blocks.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "@tryfabric/martian": "^1.2.5",
+      "express": "^4.19.2"
+    }
+  }
