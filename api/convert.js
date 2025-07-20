@@ -1,4 +1,4 @@
-const  martian = require('@tryfabric/martian');
+const { markdownToBlocks } = require('@tryfabric/martian');
 
 module.exports = (req, res) => {
   if (req.method !== 'POST') {
@@ -13,17 +13,15 @@ module.exports = (req, res) => {
   }
 
   try {
-    const notionBlocks = martian.parse(markdown);
+    // Use the correct function from the library
+    const notionBlocks = markdownToBlocks(markdown);
     res.status(200).send(notionBlocks);
-  } catch (error) {
-    // Log the full error for debugging in Vercel's logs
-    console.error('Conversion Error:', error);
     
-    // Send a more informative error back to n8n
-    res.status(500).json({ 
+  } catch (error) {
+    console.error('Conversion Error:', error);
+    res.status(500).json({
       error: 'Failed to convert markdown.',
-      // Add the specific error message to the response
-      details: error.message || 'No additional details available.' 
+      details: error.message || 'No additional details available.',
     });
   }
 };
