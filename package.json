@@ -7,7 +7,7 @@
       "start": "node index.js"
     },
     "dependencies": {
-      "@tryfabric/martian": "^1.2.5",
+      "@tryfabric/martian": "^1.2.4",
       "express": "^4.19.2"
     }
   }
