@@ -1,4 +1,4 @@
-const { martian } = require('@tryfabric/martian');
+const  martian = require('@tryfabric/martian');
 
 module.exports = (req, res) => {
   if (req.method !== 'POST') {
